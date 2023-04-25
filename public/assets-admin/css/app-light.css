@@ -1979,6 +1979,32 @@ fieldset:disabled a.btn {
     .show > .btn-danger.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
 
+.btn-pink {
+  color: #ffffff;
+  background-color: #e83e8c;
+  border-color: #e83e8c; }
+  .btn-pink:hover {
+    color: #ffffff;
+    background-color: #c23f7c;
+    border-color: #e83e8c; }
+  .btn-pink:focus, .btn-pink.focus {
+    color: #ffffff;
+    background-color: #c23f7c;
+    border-color: #e83e8c;
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+  .btn-pink.disabled, .btn-pink:disabled {
+    color: #ffffff;
+    background-color: #e83e8c;
+    border-color: #e83e8c; }
+  .btn-pink:not(:disabled):not(.disabled):active, .btn-pink:not(:disabled):not(.disabled).active,
+  .show > .btn-pink.dropdown-toggle {
+    color: #ffffff;
+    background-color: #e83e8c;
+    border-color: #c23f7c; }
+    .btn-pink:not(:disabled):not(.disabled):active:focus, .btn-pink:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-pink.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+
 .btn-light {
   color: #212529;
   background-color: #f8f9fa;
