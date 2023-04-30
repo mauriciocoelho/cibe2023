@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\InscricoesController;
+use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortalController;
@@ -17,17 +20,27 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 //PORTAL
-Route::get('/', function () {
-    return view('portal.index');
-});
-
+Route::get('/', [PortalController::class, 'index']);
+Route::get('inscricao', [PortalController::class, 'index'])->name('inscricao');
 Route::get('confirma-dados', [PortalController::class, 'confirmaDados'])->name('confirma-dados');
+Route::post('finaliza-inscricao', [PortalController::class, 'finalizaInscricao'])->name('finaliza-inscricao');
+Route::post('fazer-pagamento', [PortalController::class, 'fazerPagamento'])->name('fazer-pagamento');
+
 
 //ADMIN
 ### AUTH ###
 Auth::routes();
 ### HOME ###
-Route::get('/admin.home', [HomeController::class, 'index'])->name('admin.home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+Route::resource('/usuarios', UsersController::class);
+Route::resource('/inscricoes', InscricoesController::class);
+Route::patch('inscricoes/pagamento/{id}', [InscricoesController::class, 'pagamento'])->name('inscricoes.pagamento');
+Route::get('exportInscricoes',  [InscricoesController::class, 'export'])->name('inscricoes.export');
+Route::get('relatorio-inscricao-pagas', [InscricoesController::class, 'relatorioInscricaoPaga'])->name('relatorio-inscricao.paga');
+Route::get('relatorio-inscricao-a-pagar', [InscricoesController::class, 'relatorioInscricaoAPagar'])->name('relatorio-inscricao.apagar');
+
 
 //Cache
 Route::get('/clear-cache', function() {
