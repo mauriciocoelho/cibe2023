@@ -38,18 +38,24 @@
                     <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
                         <i class="fe fe-menu navbar-toggler-icon"></i>
                     </button>
-                   <!-- <form class="form-inline mr-auto searchform text-muted" action="" method="post">
-                        {{csrf_field()}}
-                        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" name="search" type="search" placeholder="Busque por Álbuns, Clientes, Perfil de Usuário e Usuário" aria-label="Search">
-                    </form> -->
                     <ul class="nav">
-                        <!--<li class="nav-item nav-notif">
-                            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
-                            <span class="fe fe-bell fe-16"></span>
-                            <span class="dot dot-md bg-success"></span>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-1">Olá,
+                                    <span class="user-name text-bold-700">{{ Auth::user()->name }}</span>
+                                </span>
+                                <span class="avatar avatar-sm mt-2">
+                                    @if (Auth::user()->avatar  == '')
+                                        <img src="{{asset('assets-admin/assets/avatars/user-default.png')}}" alt="..." class="avatar-img rounded-circle">
+                                    @else
+                                        <img src="{{asset('assets-admin/assets/avatars/'.Auth::user()->avatar )}}" alt="..." class="avatar-img rounded-circle">
+                                    @endif
+                                </span>
                             </a>
-                        </li>-->
-                        
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ModalSair">{{ __('Sair') }}</a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                    
@@ -112,7 +118,7 @@
                     
                     <!-- end nav bar -->
                 </aside>
-
+            @include('layouts.logout')
             @yield('content')
             @yield('scripts')
         </div> <!-- .wrapper -->    

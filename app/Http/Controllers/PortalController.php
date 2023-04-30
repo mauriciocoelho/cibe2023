@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\InscricaoRequest;
-use App\Models\Inscrito;
 use App\Repositories\InscricaoRepository;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -24,8 +23,6 @@ class PortalController extends Controller
     }
     
     public function confirmaDados(Request $request){
-        
-        ///$verificaInscricao = Inscrito::
         
         $nome = $request->input('nome');
         $cpf = $request->input('cpf');

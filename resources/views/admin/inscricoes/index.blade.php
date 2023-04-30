@@ -18,9 +18,9 @@
                             <a href="{{route('inscricoes.create')}}" class="btn btn-success">
                                 <span class="fe fe-plus fe-12 mr-2"></span>Novo
                             </a>
-                            <a href="{{ route('inscricoes.export') }}" class="btn btn-warning">
+                            <!--<a href="{{ route('inscricoes.export') }}" class="btn btn-warning">
                                 <span class="fe fe-download fe-12 mr-2"></span>Exportar
-                            </a>                             
+                            </a>  -->                           
                         </div>
                     </div>
                     @if(session()->get('success'))
