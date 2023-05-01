@@ -100,8 +100,13 @@
         document.addEventListener("DOMContentLoaded", function() {
             var total = localStorage.getItem("total");
             if(total != null) {
-                let formattedTotal = total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-                document.getElementById("total").textContent = "Total: R$ " + formattedTotal;
+                let formattedTotal = new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }).format(total);
+                document.getElementById("total").textContent = "Total: " + formattedTotal;
             }
         });
 

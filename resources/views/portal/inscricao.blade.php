@@ -29,7 +29,7 @@
                     </div>
                     <br>
                     <div style="text-align: center;">
-                        <h3 id="total">Total: R$ 130</h3>
+                        <h3 id="total">Total: R$ 132,00</h3>
                     </div>
 
                     <div class="row justify-content-center">
@@ -102,7 +102,7 @@
     <script src="{{asset('assets-admin/js/select2.min.js')}}"></script>
     <!-- adicionar e remover numero na input -->
     <script>
-        let valorUnitario = 130;
+        let valorUnitario = 132;
         let quantidade = 1;
 
         function atualizarTotal() {
@@ -159,7 +159,7 @@
         function salvarNoLocalStorage() {
             // obtém valor total
             const total = document.getElementById('total').textContent;
-            const numericTotal = parseFloat(total.split('R$ ')[1]);
+            const numericTotal = parseFloat(total.split('R$ ')[1].replace(/\./g, '').replace(',', '')) / 100;
             localStorage.setItem('total', numericTotal);
 
             // obtém os valores dos campos do formulário
@@ -201,12 +201,16 @@
         carregarDoLocalStorage();
 
         document.addEventListener("DOMContentLoaded", function() {
-        var total = localStorage.getItem("total");
+            var total = localStorage.getItem("total");
             if(total != null) {
-                let formattedTotal = total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-                document.getElementById("total").textContent = "Total: R$ " + formattedTotal;
+                let formattedTotal = new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }).format(total);
+                document.getElementById("total").textContent = "Total: " + formattedTotal;
             }
-        });
-        
+        });        
     </script>
 @endsection
