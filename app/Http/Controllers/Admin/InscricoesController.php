@@ -21,7 +21,7 @@ class InscricoesController extends Controller
     
     public function index(Request $request)
     {
-        $data = Inscrito::orderBy('id','ASC')->paginate(5);
+        $data = Inscrito::orderBy('id','ASC')->get();
         return view('admin.inscricoes.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

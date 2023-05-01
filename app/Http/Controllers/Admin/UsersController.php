@@ -22,7 +22,7 @@ class UsersController extends Controller
     
     public function index(Request $request)
     {
-        $data = User::orderBy('id','ASC')->paginate(5);
+        $data = User::orderBy('id','ASC')->get();
         return view('admin.usuarios.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

@@ -13,7 +13,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="w-50 mx-auto text-center justify-content-center">
-
+                        <br>
                         <center><a href=""><img class="brand-logo" src="{{asset('assets-admin/assets/images/31_CIBE-TO_2023_page-0001.png')}}" width="100px" height="100px" style="display: block;"></a></center>
                         
                         <h2 class="page-title mb-0">Seja bem-vindo CIBE2023</h2>
@@ -55,7 +55,7 @@
                                         </div>                                   
                                         <hr>
                                         <div style="text-align: center;">
-                                            <a href="/" class="btn btn-warning">Voltar</a>    
+                                            <a href="/inscricao" class="btn btn-warning">Voltar</a>    
                                             <button type="submit" class="btn btn-success">FINALIZAR INSCRIÇÃO</button>
                                         </div>                                    
                                     </form>

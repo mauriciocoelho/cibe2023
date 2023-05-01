@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Artisan;
 
 //PORTAL
 Route::get('/', [PortalController::class, 'index']);
-Route::get('inscricao', [PortalController::class, 'index'])->name('inscricao');
+Route::get('inscricao', [PortalController::class, 'inscricao'])->name('inscricao');
 Route::get('confirma-dados', [PortalController::class, 'confirmaDados'])->name('confirma-dados');
 Route::post('finaliza-inscricao', [PortalController::class, 'finalizaInscricao'])->name('finaliza-inscricao');
 Route::post('fazer-pagamento', [PortalController::class, 'fazerPagamento'])->name('fazer-pagamento');
