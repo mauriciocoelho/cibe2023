@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Mauricio Coelho">
         <meta name="author" content="Mauricio Coelho">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets-admin/assets/images/favicon//apple-touch-icon.png')}}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets-admin/assets/images/favicon//favicon-32x32.png')}}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets-admin/assets/images/favicon//favicon-16x16.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets-admin/assets/images/favicon_io/apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets-admin/assets/images/favicon_io/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets-admin/assets/images/favicon_io/favicon-16x16.png')}}">
         <title>31 Congresso CIBE - TOCANTINS Região Centro-Oeste</title>
 
         <style>
@@ -119,15 +119,16 @@
 
     </head>
     <body>
-        <main role="main" class="main-content">
-            <center>
-                <a href="{{route('inscricao')}}">
-                    <br>
-                    <img class="brand-background" src="{{asset('assets-admin/assets/images/cartaz.png')}}">
-                    <br>
-                    <button>FAÇA SUA INSCRIÇÃO</button>
-                </a>
-            </center>
-        </main>
+    <main role="main" class="main-content">
+        <center>
+            <a href="{{route('inscricao')}}">
+                <br>
+                <img class="brand-background" src="{{asset('assets-admin/assets/images/cartaz.png')}}" oncontextmenu="return false;">
+                <br>
+                <button>FAÇA SUA INSCRIÇÃO</button>
+            </a>
+        </center>
+    </main>
+
     </body>    
 </html>

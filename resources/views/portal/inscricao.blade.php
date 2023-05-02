@@ -16,7 +16,7 @@
                         <br>
                         <center><a href=""><img class="brand-logo" src="{{asset('assets-admin/assets/images/31_CIBE-TO_2023_page-0001.png')}}" width="100px" height="100px" style="display: block;"></a></center>
                         
-                        <h2 class="page-title mb-0">Seja bem-vindo CIBE2023</h2>
+                        <h2 class="page-title mb-0">{{ config('app.name') }}</h2>
                         <p class="lead text-muted mb-4">Para fazer a inscrição digite as informações</p>                        
                     </div>
 
@@ -45,7 +45,7 @@
                                             </div>
                                             <div class="form-group col-md-8">
                                                 <label style="font-size: 18px;">Nome Completo</label>
-                                                <input type="text" class="form-control" name="nome" style="font-size: 18px;" required>
+                                                <input type="text" class="form-control" name="nome" style="font-size: 18px; text-transform: uppercase;" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -55,7 +55,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label style="font-size: 18px;">Cidade</label>
-                                                <input type="text" class="form-control" name="cidade" style="font-size: 18px;" required>
+                                                <input type="text" class="form-control" name="cidade" style="font-size: 18px; text-transform: uppercase;" required>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label style="font-size: 18px;">Campo</label>

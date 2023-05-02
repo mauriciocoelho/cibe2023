@@ -19,7 +19,7 @@
                                 <img class="brand-logo" src="{{asset('assets-admin/assets/images/31_CIBE-TO_2023_page-0001.png')}}" width="100px" height="100px" style="display: block;">
                             </a>
                         </center>                        
-                        <h2 class="page-title mb-0">Seja bem-vindo CIBE2023</h2>
+                        <h2 class="page-title mb-0">{{ config('app.name') }}</h2>
                         <p class="lead text-muted mb-4">Finalize sua inscrição</p>                        
                     </div>
                     
@@ -70,7 +70,14 @@
                                         <dl class="row mb-0">
                                             <dd class="col-sm-12 text-center">
                                                 <h5> APÓS REALIZAR O PAGAMENTO ENVIAR, NÚMERO DE INSCRICAO E O COMPROVANTE PELO WHATSAPP. </h5>
-                                                <h4><a href="https://api.whatsapp.com/send?phone=5563984838849&text=segue%20o%20comprovante%20de%20pagamento" target="_blank">(63) 98483-8849</a></h4>
+                                                <h4>
+                                                    <a href="https://api.whatsapp.com/send?phone=5563984838849&text=segue%20o%20comprovante%20de%20pagamento" target="_blank" style="display: inline-block;">
+                                                        (63) 98483-8849
+                                                        <img class="brand-logo" src="{{asset('assets-admin/assets/images/whatsapp.png')}}" width="5%" height="5%" style="vertical-align: middle;">
+                                                    </a>
+                                                </h4>
+
+
                                                 <h4 id="id_aviso"> </h4>
                                             </dd>                                                            
                                         </dl>

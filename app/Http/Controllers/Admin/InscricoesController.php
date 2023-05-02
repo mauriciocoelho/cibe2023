@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\InscricoesExport;
 use App\Http\Controllers\Controller;
 use App\Models\Inscrito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class InscricoesController extends Controller
 {
@@ -107,7 +110,7 @@ class InscricoesController extends Controller
         return \PDF::loadView('admin.inscricoes.reports.pago', compact('gerals','inscricoesCount'))
                     // Se quiser que fique no formato a4 retrato: 
                         ->setPaper('A4', 'portrait')
-                        ->stream('ListaIrmasGeral.pdf');
+                        ->stream('RelatorioPagos.pdf');
                 // ->download('ListaIrmas.pdf');
         
     }
@@ -128,7 +131,7 @@ class InscricoesController extends Controller
         return \PDF::loadView('admin.inscricoes.reports.apagar', compact('gerals','inscricoesCount'))
                     // Se quiser que fique no formato a4 retrato: 
                         ->setPaper('A4', 'portrait')
-                        ->stream('ListaIrmasGeral.pdf');
+                        ->stream('RelatorioAPagar.pdf');
                 // ->download('ListaIrmas.pdf');
         
     }
@@ -155,6 +158,6 @@ class InscricoesController extends Controller
 
     public function export(Request $request)
     {
-    //    return Excel::download(new InscricoesExport($request), 'pagar.xlsx');
+        return Excel::download(new InscricoesExport($request), 'Inscricoes.xlsx');
     } 
 }

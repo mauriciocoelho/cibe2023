@@ -16,7 +16,7 @@
                         <br>
                         <center><a href=""><img class="brand-logo" src="{{asset('assets-admin/assets/images/31_CIBE-TO_2023_page-0001.png')}}" width="100px" height="100px" style="display: block;"></a></center>
                         
-                        <h2 class="page-title mb-0">Seja bem-vindo CIBE2023</h2>
+                        <h2 class="page-title mb-0">{{ config('app.name') }}</h2>
                         <p class="lead text-muted mb-4">Informações da Inscrição</p>                        
                     </div>
                     <br>

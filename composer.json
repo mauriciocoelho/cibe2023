@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
         "laravelcollective/html": "^6.4",
+        "maatwebsite/excel": "*",
         "owen-it/laravel-auditing": "^13.5",
         "yoeunes/toastr": "^2.3"
     },
