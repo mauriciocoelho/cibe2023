@@ -8,11 +8,13 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets-admin/assets/images/favicon_io/apple-touch-icon.png')}}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets-admin/assets/images/favicon_io/favicon-32x32.png')}}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets-admin/assets/images/favicon_io/favicon-16x16.png')}}">
-        <title>31 Congresso CIBE - TOCANTINS Região Centro-Oeste</title>
+        <title>31° Congresso CIBE - TOCANTINS Região Centro-Oeste</title>
 
         <style>
             body {
-                background-color: #e9d4da;
+                background-image: linear-gradient(180deg, rgba(249,243,244,255) 0%, rgba(233,212,218,1) 100%);
+                background-size: 100% 200%; /* 50% do tamanho da altura do elemento */
+                background-repeat: no-repeat; /* para não repetir o gradiente */
             }
 
             button {
@@ -24,6 +26,13 @@
                 border-radius: 5px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                font-family: 'Corporative Slab Bold', sans-serif;
+                color: #996633;
+                margin-top: -25px;
             }
 
             button:hover {
@@ -120,15 +129,15 @@
     </head>
     <body>
     <main role="main" class="main-content">
-        <center>
+        <center>            
+            <br>
+            <img class="brand-background" src="{{asset('assets-admin/assets/images/31_CIBE-TO_2023_page-0001.png')}}" oncontextmenu="return false;">
+            <h2>REGIÃO CENTRO-OESTE</h2>
             <a href="{{route('inscricao')}}">
-                <br>
-                <img class="brand-background" src="{{asset('assets-admin/assets/images/cartaz.png')}}" oncontextmenu="return false;">
-                <br>
                 <button>FAÇA SUA INSCRIÇÃO</button>
             </a>
         </center>
-    </main>
+    </main> 
 
     </body>    
 </html>

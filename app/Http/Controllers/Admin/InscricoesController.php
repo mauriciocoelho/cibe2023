@@ -98,19 +98,19 @@ class InscricoesController extends Controller
     public function relatorioInscricaoPaga()
     {
                 
-        $gerals = Inscrito::select('campo', DB::raw('SUM(qntde) as total'))
+        $gerals = Inscrito::select('campo', DB::raw('SUM(qntde) as inscricoes'), DB::raw('SUM(valor) as valor'))
             ->where('status_pagamento', 1)
             ->whereNull('deleted_at')
             ->groupBy('campo')
             ->orderByRaw('campo ASC')
             ->get();
         
-        $inscricoesCount = Inscrito::where('status_pagamento', 1)->whereNull('deleted_at')->sum('qntde');
+        $inscricoesSum = Inscrito::where('status_pagamento', 1)->whereNull('deleted_at')->sum('valor');
 
-        return \PDF::loadView('admin.inscricoes.reports.pago', compact('gerals','inscricoesCount'))
+        return \PDF::loadView('admin.inscricoes.reports.pago', compact('gerals','inscricoesSum'))
                     // Se quiser que fique no formato a4 retrato: 
                         ->setPaper('A4', 'portrait')
-                        ->stream('RelatorioPagos.pdf');
+                        ->stream('relatorio_inscricoes_pagas.pdf');
                 // ->download('ListaIrmas.pdf');
         
     }
@@ -118,20 +118,20 @@ class InscricoesController extends Controller
     public function relatorioInscricaoAPagar()
     {
                 
-        $gerals = Inscrito::select('campo', DB::raw('SUM(qntde) as total'))
+        $gerals = Inscrito::select('campo', DB::raw('SUM(qntde) as inscricoes'), DB::raw('SUM(valor) as valor'))
             ->where('status_pagamento', 0)
             ->whereNull('deleted_at')
             ->groupBy('campo')
             ->orderByRaw('campo ASC')
             ->get();
         
-        $inscricoesCount = Inscrito::where('status_pagamento', 0)->whereNull('deleted_at')->sum('qntde');
+        $inscricoesSum = Inscrito::where('status_pagamento', 0)->whereNull('deleted_at')->sum('valor');
 
 
-        return \PDF::loadView('admin.inscricoes.reports.apagar', compact('gerals','inscricoesCount'))
+        return \PDF::loadView('admin.inscricoes.reports.apagar', compact('gerals','inscricoesSum'))
                     // Se quiser que fique no formato a4 retrato: 
                         ->setPaper('A4', 'portrait')
-                        ->stream('RelatorioAPagar.pdf');
+                        ->stream('relatorio_inscricoes_a_pagar.pdf');
                 // ->download('ListaIrmas.pdf');
         
     }

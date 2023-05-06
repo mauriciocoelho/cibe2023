@@ -76,8 +76,6 @@
                                                         <img class="brand-logo" src="{{asset('assets-admin/assets/images/whatsapp.png')}}" width="5%" height="5%" style="vertical-align: middle;">
                                                     </a>
                                                 </h4>
-
-
                                                 <h4 id="id_aviso"> </h4>
                                             </dd>                                                            
                                         </dl>
@@ -88,6 +86,12 @@
                                             <h3 class="h5 mb-1">Pagamento via PIX</h3>
                                             <a href=""><img class="brand-logo" src="{{asset('assets-admin/assets/images/qrcode-pix.png')}}" width="30%" height="30%" style="display: block;"></a>
                                             <a href="" target="_blank" class="btn btn-pink" id="finalizar-pagamento">FINALIZAR PAGAMENTO VIA PIX</a><br><br>
+                                            <h4 style="font-size: 24px;">Dados para Pagamento</h4>
+                                            <p style="font-size: 22px; margin-bottom: 5px;">Banco do Brasil</p>
+                                            <p style="font-size: 22px; margin-bottom: 3px;">Ag. <b>1117-7</b> Conta Corrente <b>36368-5</b></p>
+                                            <p style="font-size: 22px; margin-bottom: 3px;">Chave Pix CNPJ: <b>01.231.182/0001-74</b></p>
+                                            <p style="font-size: 22px; margin-bottom: 0;">Igreja Assembleia de Deus</p>
+
                                         </center>
                                     </div>
                                 </div> <!-- .card -->
