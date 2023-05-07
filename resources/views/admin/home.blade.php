@@ -195,7 +195,7 @@
                                         <table class="table table-striped table-hover table-borderless">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>{{ __('Data') }}</th>
                                                 <th>{{ __('Nome') }}</th>                                     
                                                 <th>{{ __('Campo') }}</th>                                        
                                                 <th>{{ __('Qtde') }}</th>
@@ -206,7 +206,7 @@
                                             <tbody>
                                                 @foreach ($inscricoes as $key => $inscricao)
                                                     <tr>
-                                                        <td>{{ $inscricao->id }}</td>
+                                                        <td>{{ date('d-m-Y H:i:s', strtotime($inscricao->created_at)) }}</td>
                                                         <td>{{ $inscricao->nome }}</td>
                                                         <td>{{ $inscricao->campo }}</td>
                                                         <td>{{ $inscricao->qntde }}</td>

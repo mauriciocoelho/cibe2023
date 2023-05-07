@@ -9,6 +9,7 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
+
 class InscricoesExport implements FromCollection, WithMapping, WithHeadings, WithTitle, ShouldAutoSize
 {
     /**
@@ -34,9 +35,9 @@ class InscricoesExport implements FromCollection, WithMapping, WithHeadings, Wit
             $inscricao->telefone,
             $inscricao->campo,
             $inscricao->qntde,
-            $inscricao->valor,
+            'R$ ' . number_format($inscricao->valor, 2, ',', '.'),
             $inscricao->status_pagamento,
-            $inscricao->created_at,
+            date('d-m-Y H:i:s', strtotime($inscricao->created_at)),
         ];
     }
 
@@ -44,7 +45,7 @@ class InscricoesExport implements FromCollection, WithMapping, WithHeadings, Wit
     public function headings(): array
     {
         return [
-            '#',
+            'Inscrição',
             'Nome Completo',
             'CPF',
             'Telefone',

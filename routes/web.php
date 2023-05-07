@@ -32,7 +32,7 @@ Route::post('fazer-pagamento', [PortalController::class, 'fazerPagamento'])->nam
 Auth::routes();
 ### HOME ###
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 
 Route::resource('/usuarios', UsersController::class);
 Route::resource('/inscricoes', InscricoesController::class);
@@ -41,6 +41,10 @@ Route::get('exportInscricoes',  [InscricoesController::class, 'export'])->name('
 Route::get('relatorio-inscricao-pagas', [InscricoesController::class, 'relatorioInscricaoPaga'])->name('relatorio-inscricao.paga');
 Route::get('relatorio-inscricao-a-pagar', [InscricoesController::class, 'relatorioInscricaoAPagar'])->name('relatorio-inscricao.apagar');
 
+//Error 404
+Route::fallback(function () {
+    return view('errors.404');
+});
 
 //Cache
 Route::get('/clear-cache', function() {

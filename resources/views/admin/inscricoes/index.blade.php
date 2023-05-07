@@ -52,7 +52,8 @@
                             <table class="table datatables" id="dataTable-1">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>{{ __('Inscrição') }}</th>
+                                        <th>{{ __('Data Inscrição') }}</th>
                                         <th>{{ __('Nome') }}</th>                                     
                                         <th>{{ __('Campo') }}</th>                                        
                                         <th>{{ __('Qtde') }}</th>
@@ -65,6 +66,7 @@
                                 @foreach ($data as $key => $inscricao)
                                     <tr>
                                         <td>{{ $inscricao->id }}</td>
+                                        <td>{{ date('d-m-Y H:i:s', strtotime($inscricao->created_at)) }}</td>
                                         <td>{{ $inscricao->nome }}</td>
                                         <td>{{ $inscricao->campo }}</td>
                                         <td>{{ $inscricao->qntde }}</td>
